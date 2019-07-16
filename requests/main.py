@@ -60,8 +60,24 @@ def timeout_request():
         print response.status_code
 
 
+def hard_requests():
+    from requests import Request, Session
+    s = Session()
+    headers = {'User-Agent': 'fake1.3.4'}
+    req = Request('GET', build_uri('user/emails'), auth=('yuanyaru', '930313yyr'), headers=headers)
+    prepped = req.prepare()
+    print prepped.body
+    print prepped.headers
+
+    resp = s.send(prepped, timeout=5)
+    print resp.status_code
+    print resp.request.headers
+    print resp.text
+
+
 if __name__ == '__main__':
     # request_method()
     # params_request()
     # json_request()
-    timeout_request()
+    # timeout_request()
+    hard_requests()
