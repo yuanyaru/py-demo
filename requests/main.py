@@ -12,6 +12,7 @@
 
 import json
 import requests
+from requests import exceptions
 
 URL = 'https://api.github.com'
 
@@ -46,7 +47,21 @@ def json_request():
     print response.status_code
 
 
+def timeout_request():
+    try:
+        response = requests.get(build_uri('user/emails'), timeout=10)
+        response.raise_for_status()
+    except exceptions.Timeout as e:
+        print e.message
+    except exceptions.HTTPError as e:
+        print e.message
+    else:
+        print response.text
+        print response.status_code
+
+
 if __name__ == '__main__':
     # request_method()
     # params_request()
-    json_request()
+    # json_request()
+    timeout_request()
