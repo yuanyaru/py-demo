@@ -7,3 +7,5 @@ some demo study in python
 4. requests库---下载图片
 5. python 与 vue 传值
 6. pytyhon 操作 sqlite
+7. 使用matplotlib创建简单的图表，并使用散点图来探索 随机漫步过程
+8. 使用Pygal来创建直方图，并使用直方图来探索同时
