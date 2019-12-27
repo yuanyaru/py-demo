@@ -9,3 +9,4 @@ some demo study in python
 6. pytyhon 操作 sqlite
 7. 使用matplotlib创建简单的图表，并使用散点图来探索 随机漫步过程
 8. 使用Pygal来创建直方图，并使用直方图来探索 同时掷两个面数不同的骰子的结果
+9. 处理 csv 和 json 文件，以及提取感兴趣的数据
