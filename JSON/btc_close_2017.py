@@ -14,28 +14,26 @@ import pygal
 import math
 from itertools import groupby
 
-"""
+
 json_url = 'https://raw.githubusercontent.com/muxuezi/btc/master/btc_close_2017.json'
 # 读取数据
 response = urlopen(json_url)
 req_urllib = response.read()
-
-req_request = requests.get(json_url)
-
 # 将数据写入文件
 with open('btc_close_2017_urllib.json', 'wb') as f:
     f.write(req_urllib)
-
-with open('btc_close_2017_request.json', 'w') as f:
-    f.write(req_request.text)
-
 # 加载json格式
 file_urllib = json.loads(req_urllib)
+print(file_urllib)
+
+json_url = 'https://raw.githubusercontent.com/muxuezi/btc/master/btc_close_2017.json'
+req_request = requests.get(json_url)
+with open('btc_close_2017_request.json', 'w') as f:
+    f.write(req_request.text)
 file_requests = req_request.json()
 
-# print(file_urllib)
-# print(file_urllib == file_requests)
-"""
+print(file_urllib == file_requests)
+
 # 将数据加载到一个列表中
 filename = 'btc_close_2017_urllib.json'
 with open(filename) as f:
